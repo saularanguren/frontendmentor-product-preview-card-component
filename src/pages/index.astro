@@ -1,0 +1,26 @@
+---
+// styles
+import '../styles/styles.css';
+
+// components
+import Card from '../components/Card.astro';
+import Layout from '../layouts/Layout.astro';
+
+// images
+import image_product_mobile from '../assets/image-product-mobile.jpg';
+import image_product_desktop from '../assets/image-product-desktop.jpg';
+---
+
+<Layout title="Frontend Mentor | Product preview card component">
+
+	<Card
+		img_desktop={image_product_desktop.src}
+		img_mobile={image_product_mobile.src}
+		product="Perfume"
+		title="Gabrielle Essence Eau De Parfum"
+		description="A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for the House of CHANEL."
+		price="$149.99"
+		previous_price="$169.99"
+	/>
+	
+</Layout>

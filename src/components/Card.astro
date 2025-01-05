@@ -1,0 +1,42 @@
+---
+import icon_cart from '../assets/icon-cart.svg';
+
+const { img_desktop, img_mobile, product, title, description, price, previous_price } = Astro.props
+---
+
+<!--* Card Container  *-->
+<main class="--card w-[21.4375rem] h-[38.1875rem] lg:w-[37.5rem] lg:h-[28.125rem] rounded-[0.625rem]">
+    
+    <!--* Product Image Container *-->
+    <picture class="w-[21.4375rem] h-[15rem] lg:w-[18.75rem] lg:h-[28.125rem]">
+        <source media="(min-width: 1024px)" srcset={img_desktop}>
+        <img src={img_mobile} alt="product image" class="size-full">
+    </picture>
+
+    <!--* Product Information Container *-->
+    <article class="p-6 lg:py-8 lg:px-[1.875rem] text-left">
+
+        <!--* Name Product *-->
+        <p class="min-w-[5.75rem] min-h-[0.9375rem] text-[0.75rem] mb-3 lg:mb-5 lg:ml-[0.0625rem] uppercase tracking-[0.3125rem] font-medium text-aurometal_saurus --font_montserrat --line_auto">{product}</p>
+
+        <!--* Title Product *-->
+        <h1 class="w-[18.4375rem] min-h-16 lg:w-[14.75rem] lg:h-24 text-[2rem] mb-4 lg:mb-6 lg:ml-[0.125rem] tracking-normal leading-8 font-bold text-gunmetal --font_fraunces">{title}</h1>
+
+        <!--* Description Product *-->
+        <p class="w-[18.4375rem] min-h-[5.75rem] lg:w-[14.8125rem] lg:h-[5.75rem] text-[0.875rem] mb-6 lg:mb-[1.8125rem] lg:ml-[0.0625rem] tracking-normal leading-[1.4375rem] font-medium text-aurometal_saurus --font_montserrat">{description}</p>
+        
+        <!--* Product Price Information *-->
+        <div class="w-[12.125rem] h-8 mb-5 lg:mb-[1.875rem] items-center justify-start gap-x-[1.1875rem] --flex_row">            
+            <h2 class="min-w-[7.9375rem] min-h-8 text-[2rem] lg:ml-[0.125rem] tracking-normal leading-8 font-bold text-deep_aquamarine --font_fraunces">{price}</h2>
+            <p class="min-w-12 min-h-[1.4375rem] text-[0.8125rem] line-through tracking-normal leading-[1.4375rem] font-medium text-aurometal_saurus --font_montserrat">{previous_price}</p>
+        </div>
+
+        <!--* Button: Add to Cart *-->
+        <button class="w-[18.4375rem] h-12 lg:w-[14.75rem] lg:ml-[0.125rem] items-center justify-center gap-x-3 rounded-lg bg-deep_aquamarine hover:bg-deep_aquamarine_hover --transition_color --flex_row">
+            <img src={icon_cart.src} alt="cart icon" class="w-[0.899375rem] h-4">
+            <h3 class="min-w-[5.3125rem] min-h-[1.0625rem] text-[0.875rem] tracking-normal font-bold text-pure_white --line_auto --font_montserrat">Add to Cart</h3>
+        </button>
+
+    </article>
+
+</main>

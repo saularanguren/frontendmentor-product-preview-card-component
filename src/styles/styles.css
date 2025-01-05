@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    * {
+        @apply p-0 m-0 box-border;
+    }
+}
+
+@layer components {
+    .--layout {
+        @apply bg-cream_bg min-h-screen --flex_col items-center justify-center;
+    }
+
+    .--card {
+        @apply bg-pure_white --flex_col lg:--flex_row overflow-hidden;
+    }
+}
+
+@layer utilities {
+    .--flex_col {
+        @apply flex flex-col;
+    }
+
+    .--flex_row {
+        @apply flex flex-row;
+    }
+
+    .--font_montserrat {
+        @apply font-montserrat not-italic;
+        font-optical-sizing: auto;
+    }
+
+    .--font_fraunces {
+        @apply font-fraunces not-italic;
+        font-optical-sizing: auto;
+        font-variation-settings: "SOFT" 0, "WONK" 0;
+    }
+
+    .--line_auto {
+        line-height: normal;
+    }
+
+    .--transition_color {
+        @apply transition-colors duration-300 ease-in-out;
+    }
+}
